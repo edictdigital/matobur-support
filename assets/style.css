@@ -166,7 +166,12 @@ h1, h2, h3 {
   font-weight: 800;
   line-height: 1.2;
   letter-spacing: -0.005em;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  overflow-wrap: break-word;
 }
+/* Arabic is cursive: any letter-spacing breaks the joining of letters. */
+:lang(ar) h1, :lang(ar) h2, :lang(ar) h3, :lang(ar) .table-wrap td::before, :lang(ar) .nav a, :lang(ar) .lang > summary { letter-spacing: 0; }
 
 .wrap { width: min(100% - 32px, 880px); margin-inline: auto; }
 
@@ -283,7 +288,7 @@ h1, h2, h3 {
   width: 8px;
   height: 8px;
   margin-inline-start: 2px;
-  border-inline-end: 2.5px solid currentColor;
+  border-right: 2.5px solid currentColor;
   border-bottom: 2.5px solid currentColor;
   transform: translateY(-2px) rotate(45deg);
 }
